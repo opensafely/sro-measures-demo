@@ -12,8 +12,7 @@ This study is a step-by-step walk-through of the OpenSAFELY framework, using the
 
 ### Remote
 
-Use [Gitpod][] for remote development:
-<https://gitpod.io/#https://github.com/opensafely/sro-measures-demo>.
+Use [Gitpod][] for remote development: [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/opensafely/sro-measures-demo)
 
 ### Local
 
