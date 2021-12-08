@@ -1,6 +1,6 @@
 from cohortextractor import Measure, StudyDefinition, patients
 
-from codelists import cholesterol_codelist, sbp_codelist  # noqa
+from codelists import *  # noqa
 
 # We use these dates when we define the study population. Rather than type them
 # "longhand" each time, we type them "shorthand", which reduces the risk of making
@@ -47,6 +47,13 @@ study = StudyDefinition(
         returning="binary_flag",
         return_expectations={"incidence": 0.1},
     ),
+
+    home_bp=patients.with_these_clinical_events(
+        codelist=home_bp_codelist,
+        between=BETWEEN,
+        returning="binary_flag",
+        return_expectations={"incidence": 0.1},
+    ),
     # What clinical event was it?
     sbp_event_code=patients.with_these_clinical_events(
         codelist=sbp_codelist,
@@ -65,6 +72,14 @@ measures = [
     Measure(
         id="sbp_by_practice",
         numerator="had_sbp_event",
+        denominator="population",
+        group_by=["practice"],
+    ),
+
+
+    Measure(
+        id="home_bp_by_practice",
+        numerator="home_bp",
         denominator="population",
         group_by=["practice"],
     ),
