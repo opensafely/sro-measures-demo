@@ -6,8 +6,8 @@ sbp_codelist = codelist_from_csv(
     column="code",
 )
 
-cholesterol_codelist = codelist_from_csv(
-    "codelists/opensafely-cholesterol-tests.csv",
+home_bp_codelist = codelist_from_csv(
+    "codelists/nhsd-primary-care-domain-refsets-homebp_cod.csv",
     system="snomed",
     column="code",
 )
