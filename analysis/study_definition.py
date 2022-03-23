@@ -47,7 +47,6 @@ study = StudyDefinition(
         returning="binary_flag",
         return_expectations={"incidence": 0.1},
     ),
-
     home_bp=patients.with_these_clinical_events(
         codelist=home_bp_codelist,
         between=BETWEEN,
@@ -75,8 +74,6 @@ measures = [
         denominator="population",
         group_by=["practice"],
     ),
-
-
     Measure(
         id="home_bp_by_practice",
         numerator="home_bp",

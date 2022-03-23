@@ -11,4 +11,3 @@ home_bp_codelist = codelist_from_csv(
     system="snomed",
     column="code",
 )
-
